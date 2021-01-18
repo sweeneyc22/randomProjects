@@ -1,0 +1,28 @@
+//Counts words in string
+//Reads from a file, for now you have to enter specific location
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        String data1 = readFileAsString("C:\\Users\\YourUser\\Desktop\\yourTextFile.txt");
+        wordCounter(data1);
+    }
+
+    private static void wordCounter(String data1) {
+        String str1 = data1;
+
+        String[] wordArray = str1.trim().split("\\s+");
+        int wordCount = wordArray.length;
+
+        System.out.println("There are " + wordCount + " words in the file.");
+    }
+
+    public static String readFileAsString(String fileName) throws Exception {
+        String data = "";
+        data = new String(Files.readAllBytes(Paths.get(fileName)));
+        return data;
+    }
+}
