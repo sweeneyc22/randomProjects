@@ -1,0 +1,26 @@
+//Reverse a string
+
+import com.sun.corba.se.impl.presentation.rmi.ExceptionHandler;
+import sun.font.Script;
+
+import java.util.Scanner;
+
+public class Main {
+    //Reversing a String using StringBuilder reverse();
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        //Request string input
+        String originalString = input.nextLine();
+        //Create StringBuilder
+        StringBuilder reverseString = new StringBuilder();
+        //Append string into StringBuilder
+        try {
+            reverseString.append(originalString);
+            //Reverse originalString
+            reverseString.reverse();
+            System.out.println(reverseString);
+        } catch(Exception e) {
+            System.out.println("There was an error, please try again.");
+        }
+    }
+}
