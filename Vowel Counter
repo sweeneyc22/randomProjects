@@ -1,0 +1,23 @@
+//Count vowels
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String sentence = input.nextLine();
+        System.out.println("Your sentence contains " + countVowels(sentence) + " vowels");
+    }
+
+    private static int countVowels(String sentence) {
+        int vowels = 0;
+        for (int i = 0; i < sentence.length(); i++) {
+            if (sentence.charAt(i) == 'A' || sentence.charAt(i) == 'E' || sentence.charAt(i) == 'I' ||
+                    sentence.charAt(i) == 'O' || sentence.charAt(i) == 'U' || sentence.charAt(i) == 'a' || sentence.charAt(i) == 'e' || sentence.charAt(i) == 'i' ||
+                    sentence.charAt(i) == 'o' || sentence.charAt(i) == 'u') {
+                vowels++;
+            }
+        } return vowels;
+    }
+}
