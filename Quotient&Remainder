@@ -1,0 +1,31 @@
+package com.company;
+
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("How many questions do you have?");
+        int numQuestions = input.nextInt();
+        HashMap<Integer, Integer> answerKey = new HashMap<Integer, Integer>(numQuestions * 2);
+
+
+        for(int i = 0; i < numQuestions; i++) {
+
+            System.out.println("Enter number to be divided");
+            int a = input.nextInt();
+            System.out.println("Enter number to divide by");
+            int b = input.nextInt();
+            int quotient = a / b;
+            int remainder = a % b;
+            answerKey.put(quotient, remainder);
+        }
+    for (Map.Entry<Integer, Integer> entry : answerKey.entrySet()) {
+        System.out.println("Quotient: " + entry.getKey() + ", Remainder: " + entry.getValue().toString());
+    }
+    }
+}
